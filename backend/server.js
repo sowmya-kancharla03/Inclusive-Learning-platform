@@ -16,7 +16,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://inclusive-learning-platform.vercel.app"
+    "https://frontend-sigma-five-94.vercel.app"
   ],
   credentials: true
 }));
