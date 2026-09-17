@@ -1,0 +1,105 @@
+### REGISTER TEACHER
+POST http://localhost:8000/user-api/register
+Content-Type: application/json
+
+{
+  "name": "Teacher One",
+  "email": "teacher@gmail.com",
+  "password": "abcd1234",
+  "role": "teacher"
+}
+
+
+### LOGIN TEACHER
+POST http://localhost:8000/user-api/login
+Content-Type: application/json
+
+{
+  "email": "teacher@gmail.com",
+  "password": "abcd1234"
+}
+
+
+### CREATE COURSE
+POST http://localhost:8000/course-api/create-course
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzQ0NDliN2I5M2RhNzI3YjAyMjZhZCIsImVtYWlsIjoidGVhY2hlckBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTc2NTAzMzE2OCwiZXhwIjoxNzY1MDM2NzY4fQ.GxITNGlMdYXQ2x35nPuiM6pDFsQfjJazkCsA-sQ8oO8
+
+{
+  "title": "Web Development Basics",
+  "description": "HTML, CSS, JavaScript for beginners"
+}
+
+
+### ADD QUIZ
+POST http://localhost:8000/course-api/add-quiz/693444ec7b93da727b0226b1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzQ0NDliN2I5M2RhNzI3YjAyMjZhZCIsImVtYWlsIjoidGVhY2hlckBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTc2NTAzMzE2OCwiZXhwIjoxNzY1MDM2NzY4fQ.GxITNGlMdYXQ2x35nPuiM6pDFsQfjJazkCsA-sQ8oO8
+
+{
+  "title": "HTML Quiz 1",
+  "questions": [
+    {
+      "question": "What does HTML stand for?",
+      "options": ["HyperText Markup Language", "Home Tool Markup Language"],
+      "correctOption": 0
+    }
+  ]
+}
+
+
+### REGISTER STUDENT
+POST http://localhost:8000/user-api/register
+Content-Type: application/json
+
+{
+  "name": "Shane Hyder",
+  "email": "hyder@gmail.com",
+  "password": "abcd1234",
+  "role": "student"
+}
+
+### LOGIN STUDENT
+POST http://localhost:8000/user-api/login
+Content-Type: application/json
+
+{
+  "email": "hyder@gmail.com",
+  "password": "abcd1234"
+}
+
+### STUDENT GET ALL COURSES
+GET http://localhost:8000/student-api/courses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzQ0NWRlN2I5M2RhNzI3YjAyMjZiYiIsImVtYWlsIjoiaHlkZXJAZ21haWwuY29tIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE3NjUwMzM0NTgsImV4cCI6MTc2NTAzNzA1OH0.3xSfSRmVGav7ianqlnjI_ouR9g0glN3sZQdJ6ND5o8U
+
+### ENROLL IN COURSE
+POST http://localhost:8000/student-api/enroll/693444ec7b93da727b0226b1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzQ0NWRlN2I5M2RhNzI3YjAyMjZiYiIsImVtYWlsIjoiaHlkZXJAZ21haWwuY29tIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE3NjUwMzM0NTgsImV4cCI6MTc2NTAzNzA1OH0.3xSfSRmVGav7ianqlnjI_ouR9g0glN3sZQdJ6ND5o8U
+
+
+### STUDENT MY COURSES
+GET http://localhost:8000/student-api/my-courses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzQ0NWRlN2I5M2RhNzI3YjAyMjZiYiIsImVtYWlsIjoiaHlkZXJAZ21haWwuY29tIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE3NjUwMzM0NTgsImV4cCI6MTc2NTAzNzA1OH0.3xSfSRmVGav7ianqlnjI_ouR9g0glN3sZQdJ6ND5o8U
+
+### GET FULL COURSE DETAILS
+GET http://localhost:8000/student-api/course/693444ec7b93da727b0226b1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzQ0NWRlN2I5M2RhNzI3YjAyMjZiYiIsImVtYWlsIjoiaHlkZXJAZ21haWwuY29tIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE3NjUwMzM0NTgsImV4cCI6MTc2NTAzNzA1OH0.3xSfSRmVGav7ianqlnjI_ouR9g0glN3sZQdJ6ND5o8U
+
+
+### SUBMIT QUIZ
+POST http://localhost:8000/student-api/quiz/693445697b93da727b0226b6/submit
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzQ0NWRlN2I5M2RhNzI3YjAyMjZiYiIsImVtYWlsIjoiaHlkZXJAZ21haWwuY29tIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE3NjUwMzM0NTgsImV4cCI6MTc2NTAzNzA1OH0.3xSfSRmVGav7ianqlnjI_ouR9g0glN3sZQdJ6ND5o8U
+
+{
+  "answers": [0]
+}
+
+### TEACHER GET ENROLLED STUDENTS
+GET http://localhost:8000/course-api/693444ec7b93da727b0226b1/enrolled-students
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzQ0NDliN2I5M2RhNzI3YjAyMjZhZCIsImVtYWlsIjoidGVhY2hlckBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTc2NTAzMzE2OCwiZXhwIjoxNzY1MDM2NzY4fQ.GxITNGlMdYXQ2x35nPuiM6pDFsQfjJazkCsA-sQ8oO8
+
+### TEACHER DASHBOARD ANALYTICS
+GET http://localhost:8000/course-api/teacher/dashboard
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzQ0NDliN2I5M2RhNzI3YjAyMjZhZCIsImVtYWlsIjoidGVhY2hlckBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTc2NTAzMzE2OCwiZXhwIjoxNzY1MDM2NzY4fQ.GxITNGlMdYXQ2x35nPuiM6pDFsQfjJazkCsA-sQ8oO8
+
